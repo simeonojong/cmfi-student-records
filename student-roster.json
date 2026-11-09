@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DEMO-001",
+    "name": "Demo Student One",
+    "gender": "Male",
+    "grade": "Grade 12",
+    "program": "Science",
+    "year": "2026",
+    "photo": "",
+    "subjects": [
+      [
+        "Mathematics",
+        85
+      ],
+      [
+        "English Language",
+        90
+      ]
+    ],
+    "status": "Approved"
+  },
+  {
+    "id": "DEMO-002",
+    "name": "Demo Student Two",
+    "gender": "Female",
+    "grade": "Grade 12",
+    "program": "Arts",
+    "year": "2026",
+    "photo": "",
+    "subjects": [
+      [
+        "Mathematics",
+        88
+      ],
+      [
+        "English Language",
+        92
+      ]
+    ],
+    "status": "Approved"
+  }
+]
