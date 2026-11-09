@@ -1,6 +1,6 @@
 # CMFI Academic Records
 
-Public website, document verification and a separate school staff workspace for CMFI Bilingual High School.
+High school website, student learning resources, document verification and a separate staff workspace for CMFI Bilingual High School.
 
 Website: https://simeonojong.github.io/cmfi-student-records/
 Staff login: https://simeonojong.github.io/cmfi-student-records/login.html
@@ -17,7 +17,7 @@ The public website and login interface are implemented. Shared authentication an
 - `login.html`: staff email/password login and password reset/setup.
 - `dashboard.html`: staff workspace, requiring authenticated active staff membership.
 
-The public design uses oversized typography, a silver/lime orbital illustration, light surfaces and a dark feature section, inspired by the supplied Sapforce reference. The purple/orange administrative dashboard remains separate.
+The public website uses the CMFI school seal, blue/white/brown colors, serif headings and graduation portraits supplied by the institution. It includes school information, academic subject groups grounded in the imported WASSCE result headings, student life, expandable study guides, contact details and document services. No unverified admissions dates, fees, exam pass rates or facilities are advertised. Staff sign-in and student verification pages use the same school branding.
 
 ## Shared records and authentication
 
