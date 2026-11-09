@@ -1,0 +1,23 @@
+/* Geometric display lettering inspired by the supplied visual references.
+   Outfit is an open-source alternative; the reference JPGs are not font files. */
+@font-face{font-family:'Outfit';font-style:normal;font-weight:100 900;font-display:swap;src:url('./fonts/outfit-variable.ttf') format('truetype')}
+:root{--font-display:'Outfit','DM Sans',Arial,sans-serif;--font-text:'DM Sans',Arial,sans-serif}
+body,input,button,select,textarea{font-family:var(--font-text)}
+h1,h2,h3,h4,.brand,.public-brand,.school-footer .public-brand,.school-hero-copy h1,.school-section h2,.school-section h2 em,.academic-card h3,.school-about-cards h3,.school-contact h2,.login-story h1,.login-card h2,.record-title h1,.record-panel h2,.page-title,.state-card h1,.hero-art-caption strong,.student-life-label strong,.school-quicklinks>div>strong{font-family:var(--font-display);font-style:normal}
+.public-brand,.school-footer .public-brand{font-weight:700;letter-spacing:-.8px}
+.brand-title small{font-family:var(--font-text);font-weight:600}
+.school-hero-copy h1{font-size:clamp(38px,3.8vw,54px);font-weight:700;line-height:1.13;letter-spacing:-.035em}
+.school-hero-copy h1 em{font-family:var(--font-display);font-style:normal;font-weight:600;letter-spacing:-.035em}
+.school-section h2{font-weight:650;letter-spacing:-.025em;line-height:1.2}
+.school-section h2 em{font-weight:500;font-style:normal;letter-spacing:-.025em}
+.school-about-cards h3,.academic-card h3{font-weight:600;letter-spacing:-.025em;line-height:1.3}
+.school-contact h2{font-weight:650;letter-spacing:-.03em;line-height:1.2}
+.hero-art-caption strong,.student-life-label strong{font-weight:500;letter-spacing:-.015em}
+.school-quicklinks>div>strong{font-weight:600;letter-spacing:-.025em}
+.login-story h1{font-weight:650;line-height:1.15;letter-spacing:-.03em}
+.login-story h1 span{font-family:var(--font-display);font-style:normal;font-weight:500}
+.login-card h2,.record-title h1,.record-panel h2,.page-title{font-weight:600;line-height:1.2;letter-spacing:-.025em}
+.guide-number,.school-quicklinks>a>span{font-family:var(--font-display);font-weight:500}
+.subject-icon{font-family:var(--font-display);font-weight:500}
+@media(max-width:1100px){.school-hero-copy h1{font-size:clamp(35px,4.1vw,44px)}}
+@media(max-width:700px){.school-hero-copy h1{font-size:clamp(32px,8.7vw,40px);line-height:1.14;letter-spacing:-.035em}.school-section h2{font-size:30px}.login-story h1{font-size:33px}.page-title{font-size:36px}}

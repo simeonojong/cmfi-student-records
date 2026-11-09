@@ -17,7 +17,7 @@ The public website and login interface are implemented. Shared authentication an
 - `login.html`: staff email/password login and password reset/setup.
 - `dashboard.html`: staff workspace, requiring authenticated active staff membership.
 
-The public website uses the CMFI school seal, blue/white/brown colors, serif headings and graduation portraits supplied by the institution. It includes school information, academic subject groups grounded in the imported WASSCE result headings, student life, expandable study guides, contact details and document services. No unverified admissions dates, fees, exam pass rates or facilities are advertised. Staff sign-in and student verification pages use the same school branding.
+The public website uses the CMFI school seal, blue/white/brown colors, geometric sans-serif headings and graduation portraits supplied by the institution. It includes school information, academic subject groups grounded in the imported WASSCE result headings, student life, expandable study guides, contact details and document services. No unverified admissions dates, fees, exam pass rates or facilities are advertised. Staff sign-in and student verification pages use the same school branding.
 
 ## Shared records and authentication
 
@@ -58,4 +58,6 @@ GitHub Pages serves the repository root from `main` and deploys updates automati
 
 PDF import supports selectable text, up to 10 MB, with a mandatory grade review. Scanned PDFs require manual entry. The system prepares draft documents, not legally signed credentials. Institution-name preferences remain local to the current browser. Production staff account lifecycle, backups and approval/signing policy must be maintained by the institution.
 
-The refined interface uses a navy welcome section, a restrained serif school wordmark, a concise quick-access directory, quieter academic panels, desktop sticky navigation and an expandable mobile menu. Desktop and 400px mobile layouts were checked in Chrome.
+The refined interface uses a navy welcome section, a bold geometric school wordmark, a concise quick-access directory, quieter academic panels, desktop sticky navigation and an expandable mobile menu. Desktop and 400px mobile layouts were checked in Chrome.
+
+Typography uses the locally hosted, open-source Outfit variable font for geometric display lettering inspired by the owner’s supplied font images, with DM Sans for readable body text. The image references are not font files; Outfit is a similar visual direction. The font license is included in `fonts/OFL-Outfit.txt`.
