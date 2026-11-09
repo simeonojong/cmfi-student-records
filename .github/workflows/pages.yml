@@ -1,5 +1,7 @@
 name: Deploy static site
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,10 +18,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare public website files
+        run: |
+          mkdir public-site
+          cp index.html app.js document-template.mjs cmfi-letterhead.png student-roster.json photo-review.json photo-matches.json public-site/
+          cp -r photos public-site/
+          touch public-site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public-site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

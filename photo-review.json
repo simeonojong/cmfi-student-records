@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "pdfPage": 6,
+    "position": 3,
+    "caption": "ERIC G. WONSEHLEAY",
+    "reason": "Roster lists ERIC Z. WONSEHLEAY"
+  },
+  {
+    "pdfPage": 6,
+    "position": 14,
+    "caption": "CHRISTIANA G. WILLIAMS",
+    "reason": "Roster lists CHRISTINANA G. WILLIAMS"
+  },
+  {
+    "pdfPage": 7,
+    "position": 1,
+    "caption": "ORETHA H. TUAZAMA",
+    "reason": "Roster has ORETHA TUAZAMA without this initial"
+  },
+  {
+    "pdfPage": 7,
+    "position": 11,
+    "caption": "NAOMIE GARGAR",
+    "reason": "Roster lists NAOMI GARGAR"
+  },
+  {
+    "pdfPage": 8,
+    "position": 2,
+    "caption": "KEBBEH M. GAYFLOR",
+    "reason": "Roster lists KEBBEH A. GAYFLOR"
+  },
+  {
+    "pdfPage": 8,
+    "position": 5,
+    "caption": "ELISHU S. KING",
+    "reason": "Roster lists ELISHA KING"
+  },
+  {
+    "pdfPage": 8,
+    "position": 9,
+    "caption": "METTA J.L. ZIO",
+    "reason": "Roster lists MATTE J.L ZIO"
+  },
+  {
+    "pdfPage": 9,
+    "position": 9,
+    "caption": "NELSON P. ASOUE",
+    "reason": "No clear matching surname in roster"
+  },
+  {
+    "pdfPage": 11,
+    "position": 4,
+    "caption": "LAWRENCE S. WILSON",
+    "reason": "No matching full name in roster"
+  },
+  {
+    "pdfPage": 11,
+    "position": 5,
+    "caption": "WINIFRED O. WILSON",
+    "reason": "Roster lists WINIFRED P. WILSON"
+  },
+  {
+    "pdfPage": 11,
+    "position": 6,
+    "caption": "FECEICIA N. BARYOEGAR",
+    "reason": "Roster lists FELECIA N. BARYOEGAR"
+  },
+  {
+    "pdfPage": 12,
+    "position": 15,
+    "caption": "JITIEEP SANOE",
+    "reason": "No unambiguous full-name match"
+  },
+  {
+    "pdfPage": 13,
+    "position": 11,
+    "caption": "ROBERT M. PARKER JR",
+    "reason": "Roster lists ROBERT N. PARKER JR."
+  }
+]

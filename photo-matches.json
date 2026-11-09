@@ -1,1 +1,772 @@
-[]
+[
+  {
+    "candidateNumber": "2101772168",
+    "name": "WOLLOR CHRISINE B.",
+    "pdfPage": 6,
+    "position": 1,
+    "photo": "photos/2101772168.jpg"
+  },
+  {
+    "candidateNumber": "2101772090",
+    "name": "KONAH PROMISE B",
+    "pdfPage": 6,
+    "position": 2,
+    "photo": "photos/2101772090.jpg"
+  },
+  {
+    "candidateNumber": "2101772111",
+    "name": "MOMO ALVIN J.",
+    "pdfPage": 6,
+    "position": 4,
+    "photo": "photos/2101772111.jpg"
+  },
+  {
+    "candidateNumber": "2101772141",
+    "name": "SONNAH FLORENCE T.S",
+    "pdfPage": 6,
+    "position": 5,
+    "photo": "photos/2101772141.jpg"
+  },
+  {
+    "candidateNumber": "2101772088",
+    "name": "KOLLIE DAVIDSON",
+    "pdfPage": 6,
+    "position": 6,
+    "photo": "photos/2101772088.jpg"
+  },
+  {
+    "candidateNumber": "2101772105",
+    "name": "MAH ANGEL N.",
+    "pdfPage": 6,
+    "position": 7,
+    "photo": "photos/2101772105.jpg"
+  },
+  {
+    "candidateNumber": "2101772023",
+    "name": "DEEMIE CECELIA",
+    "pdfPage": 6,
+    "position": 8,
+    "photo": "photos/2101772023.jpg"
+  },
+  {
+    "candidateNumber": "2101772082",
+    "name": "KERKULAH WILLIMENA",
+    "pdfPage": 6,
+    "position": 9,
+    "photo": "photos/2101772082.jpg"
+  },
+  {
+    "candidateNumber": "2101772124",
+    "name": "SANOE MAYAMU B.",
+    "pdfPage": 6,
+    "position": 10,
+    "photo": "photos/2101772124.jpg"
+  },
+  {
+    "candidateNumber": "2101772069",
+    "name": "JULUDOE PATIENCE W.",
+    "pdfPage": 6,
+    "position": 11,
+    "photo": "photos/2101772069.jpg"
+  },
+  {
+    "candidateNumber": "2101772108",
+    "name": "MASSARY SUSANNAH B.",
+    "pdfPage": 6,
+    "position": 12,
+    "photo": "photos/2101772108.jpg"
+  },
+  {
+    "candidateNumber": "2101772101",
+    "name": "LENDIN JESSICA",
+    "pdfPage": 6,
+    "position": 13,
+    "photo": "photos/2101772101.jpg"
+  },
+  {
+    "candidateNumber": "2101772065",
+    "name": "JOHNSON JOSEPHUS",
+    "pdfPage": 6,
+    "position": 15,
+    "photo": "photos/2101772065.jpg"
+  },
+  {
+    "candidateNumber": "2101772166",
+    "name": "WILSON GEORGE F.",
+    "pdfPage": 6,
+    "position": 16,
+    "photo": "photos/2101772166.jpg"
+  },
+  {
+    "candidateNumber": "2101772130",
+    "name": "SELMA GBLEE F.",
+    "pdfPage": 7,
+    "position": 2,
+    "photo": "photos/2101772130.jpg"
+  },
+  {
+    "candidateNumber": "2101772007",
+    "name": "BEDELL CATHERINE",
+    "pdfPage": 7,
+    "position": 3,
+    "photo": "photos/2101772007.jpg"
+  },
+  {
+    "candidateNumber": "2101772096",
+    "name": "KROMAH BLESSING",
+    "pdfPage": 7,
+    "position": 4,
+    "photo": "photos/2101772096.jpg"
+  },
+  {
+    "candidateNumber": "2101772038",
+    "name": "GARGAR BENNETTA",
+    "pdfPage": 7,
+    "position": 5,
+    "photo": "photos/2101772038.jpg"
+  },
+  {
+    "candidateNumber": "2101772093",
+    "name": "KONNEH MATENNEH",
+    "pdfPage": 7,
+    "position": 6,
+    "photo": "photos/2101772093.jpg"
+  },
+  {
+    "candidateNumber": "2101772155",
+    "name": "TUWEH ESTHER D.",
+    "pdfPage": 7,
+    "position": 7,
+    "photo": "photos/2101772155.jpg"
+  },
+  {
+    "candidateNumber": "2101772067",
+    "name": "JOHNSON NELSON J.",
+    "pdfPage": 7,
+    "position": 8,
+    "photo": "photos/2101772067.jpg"
+  },
+  {
+    "candidateNumber": "2101772084",
+    "name": "KIAZOLU MUNATU",
+    "pdfPage": 7,
+    "position": 9,
+    "photo": "photos/2101772084.jpg"
+  },
+  {
+    "candidateNumber": "2101772149",
+    "name": "TOGBASEE ANNA",
+    "pdfPage": 7,
+    "position": 10,
+    "photo": "photos/2101772149.jpg"
+  },
+  {
+    "candidateNumber": "2101772008",
+    "name": "BEE RUTH",
+    "pdfPage": 7,
+    "position": 12,
+    "photo": "photos/2101772008.jpg"
+  },
+  {
+    "candidateNumber": "2101772146",
+    "name": "TIAWAN DEBORAH J. W",
+    "pdfPage": 7,
+    "position": 13,
+    "photo": "photos/2101772146.jpg"
+  },
+  {
+    "candidateNumber": "2101772087",
+    "name": "KOLLIE ALICIA B.",
+    "pdfPage": 7,
+    "position": 14,
+    "photo": "photos/2101772087.jpg"
+  },
+  {
+    "candidateNumber": "2101772137",
+    "name": "SMITH JOYCE R.B",
+    "pdfPage": 7,
+    "position": 15,
+    "photo": "photos/2101772137.jpg"
+  },
+  {
+    "candidateNumber": "2101772164",
+    "name": "WILLIE GEORGIA",
+    "pdfPage": 7,
+    "position": 16,
+    "photo": "photos/2101772164.jpg"
+  },
+  {
+    "candidateNumber": "2101772048",
+    "name": "GEORGE ABRAHAM K.B",
+    "pdfPage": 8,
+    "position": 1,
+    "photo": "photos/2101772048.jpg"
+  },
+  {
+    "candidateNumber": "2101772006",
+    "name": "BAYOUR MADAGBEH V",
+    "pdfPage": 8,
+    "position": 3,
+    "photo": "photos/2101772006.jpg"
+  },
+  {
+    "candidateNumber": "2101772035",
+    "name": "FOFANAH HASSAN",
+    "pdfPage": 8,
+    "position": 4,
+    "photo": "photos/2101772035.jpg"
+  },
+  {
+    "candidateNumber": "2101772076",
+    "name": "KAMARA MASSA S",
+    "pdfPage": 8,
+    "position": 6,
+    "photo": "photos/2101772076.jpg"
+  },
+  {
+    "candidateNumber": "2101772009",
+    "name": "BELOVE BERNICE",
+    "pdfPage": 8,
+    "position": 7,
+    "photo": "photos/2101772009.jpg"
+  },
+  {
+    "candidateNumber": "2101772055",
+    "name": "HARRIS JOYCE",
+    "pdfPage": 8,
+    "position": 8,
+    "photo": "photos/2101772055.jpg"
+  },
+  {
+    "candidateNumber": "2101772089",
+    "name": "KOLLIE JR. EMMANUEL T.",
+    "pdfPage": 8,
+    "position": 10,
+    "photo": "photos/2101772089.jpg"
+  },
+  {
+    "candidateNumber": "2101772032",
+    "name": "FLOMO JAMES",
+    "pdfPage": 8,
+    "position": 11,
+    "photo": "photos/2101772032.jpg"
+  },
+  {
+    "candidateNumber": "2101772127",
+    "name": "SAWIEA PRINCE N.",
+    "pdfPage": 8,
+    "position": 12,
+    "photo": "photos/2101772127.jpg"
+  },
+  {
+    "candidateNumber": "2101772156",
+    "name": "VARNEY ESTHER M",
+    "pdfPage": 8,
+    "position": 13,
+    "photo": "photos/2101772156.jpg"
+  },
+  {
+    "candidateNumber": "2101772151",
+    "name": "TOLKOR RUTH S",
+    "pdfPage": 8,
+    "position": 14,
+    "photo": "photos/2101772151.jpg"
+  },
+  {
+    "candidateNumber": "2101772051",
+    "name": "GONPUE RUTH",
+    "pdfPage": 8,
+    "position": 15,
+    "photo": "photos/2101772051.jpg"
+  },
+  {
+    "candidateNumber": "2101772012",
+    "name": "BINTA KAMARA",
+    "pdfPage": 8,
+    "position": 16,
+    "photo": "photos/2101772012.jpg"
+  },
+  {
+    "candidateNumber": "2101772062",
+    "name": "JOHNSON BENDORIA",
+    "pdfPage": 9,
+    "position": 1,
+    "photo": "photos/2101772062.jpg"
+  },
+  {
+    "candidateNumber": "2101772053",
+    "name": "GUNPUL SARAH N",
+    "pdfPage": 9,
+    "position": 2,
+    "photo": "photos/2101772053.jpg"
+  },
+  {
+    "candidateNumber": "2101772175",
+    "name": "ZIAMO ZIAMOTAY Z.",
+    "pdfPage": 9,
+    "position": 3,
+    "photo": "photos/2101772175.jpg"
+  },
+  {
+    "candidateNumber": "2101772070",
+    "name": "KAIFALA WILLIAM F.",
+    "pdfPage": 9,
+    "position": 4,
+    "photo": "photos/2101772070.jpg"
+  },
+  {
+    "candidateNumber": "2101772113",
+    "name": "MURRAY VALARIE S.",
+    "pdfPage": 9,
+    "position": 5,
+    "photo": "photos/2101772113.jpg"
+  },
+  {
+    "candidateNumber": "2101772066",
+    "name": "JOHNSON MARION B.",
+    "pdfPage": 9,
+    "position": 6,
+    "photo": "photos/2101772066.jpg"
+  },
+  {
+    "candidateNumber": "2101772140",
+    "name": "SOLKROE JAMES C.",
+    "pdfPage": 9,
+    "position": 7,
+    "photo": "photos/2101772140.jpg"
+  },
+  {
+    "candidateNumber": "2101772172",
+    "name": "YARKABO ERNEST",
+    "pdfPage": 9,
+    "position": 8,
+    "photo": "photos/2101772172.jpg"
+  },
+  {
+    "candidateNumber": "2101772050",
+    "name": "GOAH STEVE",
+    "pdfPage": 9,
+    "position": 10,
+    "photo": "photos/2101772050.jpg"
+  },
+  {
+    "candidateNumber": "2101772136",
+    "name": "SMITH JAYLYN R.B",
+    "pdfPage": 9,
+    "position": 11,
+    "photo": "photos/2101772136.jpg"
+  },
+  {
+    "candidateNumber": "2101772029",
+    "name": "DUNBAR JUBA",
+    "pdfPage": 9,
+    "position": 12,
+    "photo": "photos/2101772029.jpg"
+  },
+  {
+    "candidateNumber": "2101772061",
+    "name": "JOHNNY MAITTA",
+    "pdfPage": 9,
+    "position": 13,
+    "photo": "photos/2101772061.jpg"
+  },
+  {
+    "candidateNumber": "2101772157",
+    "name": "WANTOE ANTEE B.",
+    "pdfPage": 9,
+    "position": 14,
+    "photo": "photos/2101772157.jpg"
+  },
+  {
+    "candidateNumber": "2101772135",
+    "name": "SMITH ABEL B.",
+    "pdfPage": 9,
+    "position": 15,
+    "photo": "photos/2101772135.jpg"
+  },
+  {
+    "candidateNumber": "2101772147",
+    "name": "TITUS TETA",
+    "pdfPage": 9,
+    "position": 16,
+    "photo": "photos/2101772147.jpg"
+  },
+  {
+    "candidateNumber": "2101772013",
+    "name": "BOAKAI KPANNAH",
+    "pdfPage": 10,
+    "position": 1,
+    "photo": "photos/2101772013.jpg"
+  },
+  {
+    "candidateNumber": "2101772030",
+    "name": "DUO IDAY",
+    "pdfPage": 10,
+    "position": 2,
+    "photo": "photos/2101772030.jpg"
+  },
+  {
+    "candidateNumber": "2101772016",
+    "name": "BORBOR HAWA",
+    "pdfPage": 10,
+    "position": 3,
+    "photo": "photos/2101772016.jpg"
+  },
+  {
+    "candidateNumber": "2101772037",
+    "name": "GARDUWAR YANCY F.",
+    "pdfPage": 10,
+    "position": 4,
+    "photo": "photos/2101772037.jpg"
+  },
+  {
+    "candidateNumber": "2101772169",
+    "name": "WONPEA MOSES",
+    "pdfPage": 10,
+    "position": 5,
+    "photo": "photos/2101772169.jpg"
+  },
+  {
+    "candidateNumber": "2101772116",
+    "name": "NEAH GRACE BLESSING",
+    "pdfPage": 10,
+    "position": 6,
+    "photo": "photos/2101772116.jpg"
+  },
+  {
+    "candidateNumber": "2101772114",
+    "name": "NDEBAY MUSU R.",
+    "pdfPage": 10,
+    "position": 7,
+    "photo": "photos/2101772114.jpg"
+  },
+  {
+    "candidateNumber": "2101772014",
+    "name": "BOE LAWRENCE",
+    "pdfPage": 10,
+    "position": 8,
+    "photo": "photos/2101772014.jpg"
+  },
+  {
+    "candidateNumber": "2101772102",
+    "name": "LEWIS JEREMIAH P.",
+    "pdfPage": 10,
+    "position": 9,
+    "photo": "photos/2101772102.jpg"
+  },
+  {
+    "candidateNumber": "2101772103",
+    "name": "LLOYD BORIS G",
+    "pdfPage": 10,
+    "position": 10,
+    "photo": "photos/2101772103.jpg"
+  },
+  {
+    "candidateNumber": "2101772060",
+    "name": "JOE JOSHUA J.",
+    "pdfPage": 10,
+    "position": 11,
+    "photo": "photos/2101772060.jpg"
+  },
+  {
+    "candidateNumber": "2101772091",
+    "name": "KONNEH ABRAHAM S.",
+    "pdfPage": 10,
+    "position": 12,
+    "photo": "photos/2101772091.jpg"
+  },
+  {
+    "candidateNumber": "2101772171",
+    "name": "YARDOLO VIVIAN M.L",
+    "pdfPage": 10,
+    "position": 13,
+    "photo": "photos/2101772171.jpg"
+  },
+  {
+    "candidateNumber": "2101772081",
+    "name": "KARVAH REJOICE A",
+    "pdfPage": 10,
+    "position": 14,
+    "photo": "photos/2101772081.jpg"
+  },
+  {
+    "candidateNumber": "2101772011",
+    "name": "BINDA GEORGE",
+    "pdfPage": 10,
+    "position": 15,
+    "photo": "photos/2101772011.jpg"
+  },
+  {
+    "candidateNumber": "2101772160",
+    "name": "WHYEE EZEKIEL",
+    "pdfPage": 10,
+    "position": 16,
+    "photo": "photos/2101772160.jpg"
+  },
+  {
+    "candidateNumber": "2101772004",
+    "name": "BARH FULFILLED W",
+    "pdfPage": 11,
+    "position": 1,
+    "photo": "photos/2101772004.jpg"
+  },
+  {
+    "candidateNumber": "2101772122",
+    "name": "SANNOH ALLIE M.",
+    "pdfPage": 11,
+    "position": 2,
+    "photo": "photos/2101772122.jpg"
+  },
+  {
+    "candidateNumber": "2101772047",
+    "name": "GEEGBE KENNETH D.",
+    "pdfPage": 11,
+    "position": 3,
+    "photo": "photos/2101772047.jpg"
+  },
+  {
+    "candidateNumber": "2101772010",
+    "name": "BENTOE PRAISE D.",
+    "pdfPage": 11,
+    "position": 7,
+    "photo": "photos/2101772010.jpg"
+  },
+  {
+    "candidateNumber": "2101772056",
+    "name": "HODGE ADI P.",
+    "pdfPage": 11,
+    "position": 8,
+    "photo": "photos/2101772056.jpg"
+  },
+  {
+    "candidateNumber": "2101772092",
+    "name": "KONNEH GARFEE S.",
+    "pdfPage": 11,
+    "position": 9,
+    "photo": "photos/2101772092.jpg"
+  },
+  {
+    "candidateNumber": "2101772020",
+    "name": "DAVIS BLESSING N.",
+    "pdfPage": 11,
+    "position": 10,
+    "photo": "photos/2101772020.jpg"
+  },
+  {
+    "candidateNumber": "2101772173",
+    "name": "YEANAY JR. DRAYTON W.",
+    "pdfPage": 11,
+    "position": 11,
+    "photo": "photos/2101772173.jpg"
+  },
+  {
+    "candidateNumber": "2101772177",
+    "name": "ZUBAH MUSU",
+    "pdfPage": 11,
+    "position": 12,
+    "photo": "photos/2101772177.jpg"
+  },
+  {
+    "candidateNumber": "2101772097",
+    "name": "KUOH LUKE L.",
+    "pdfPage": 11,
+    "position": 13,
+    "photo": "photos/2101772097.jpg"
+  },
+  {
+    "candidateNumber": "2101772034",
+    "name": "FLOMO YASSAH",
+    "pdfPage": 11,
+    "position": 14,
+    "photo": "photos/2101772034.jpg"
+  },
+  {
+    "candidateNumber": "2101772100",
+    "name": "LAWRINA K. GENEYAN",
+    "pdfPage": 11,
+    "position": 15,
+    "photo": "photos/2101772100.jpg"
+  },
+  {
+    "candidateNumber": "2101772036",
+    "name": "FULLY VICTORIA D.",
+    "pdfPage": 11,
+    "position": 16,
+    "photo": "photos/2101772036.jpg"
+  },
+  {
+    "candidateNumber": "2101772080",
+    "name": "KARMO FAITH B.",
+    "pdfPage": 12,
+    "position": 1,
+    "photo": "photos/2101772080.jpg"
+  },
+  {
+    "candidateNumber": "2101772115",
+    "name": "NDORBOR TENNEH",
+    "pdfPage": 12,
+    "position": 2,
+    "photo": "photos/2101772115.jpg"
+  },
+  {
+    "candidateNumber": "2101772159",
+    "name": "WEAH PRINCE J",
+    "pdfPage": 12,
+    "position": 3,
+    "photo": "photos/2101772159.jpg"
+  },
+  {
+    "candidateNumber": "2101772079",
+    "name": "KANGAR JERELINE",
+    "pdfPage": 12,
+    "position": 4,
+    "photo": "photos/2101772079.jpg"
+  },
+  {
+    "candidateNumber": "2101772104",
+    "name": "LYNCH CASSIE G.",
+    "pdfPage": 12,
+    "position": 5,
+    "photo": "photos/2101772104.jpg"
+  },
+  {
+    "candidateNumber": "2101772059",
+    "name": "JOE AGNES S.",
+    "pdfPage": 12,
+    "position": 6,
+    "photo": "photos/2101772059.jpg"
+  },
+  {
+    "candidateNumber": "2101772123",
+    "name": "SANOE JIHEEP",
+    "pdfPage": 12,
+    "position": 7,
+    "photo": "photos/2101772123.jpg"
+  },
+  {
+    "candidateNumber": "2101772121",
+    "name": "REEVES MOSES K",
+    "pdfPage": 12,
+    "position": 8,
+    "photo": "photos/2101772121.jpg"
+  },
+  {
+    "candidateNumber": "2101772040",
+    "name": "GARMIE FREDELLSON",
+    "pdfPage": 12,
+    "position": 9,
+    "photo": "photos/2101772040.jpg"
+  },
+  {
+    "candidateNumber": "2101772161",
+    "name": "WHYEE HARRIS N.",
+    "pdfPage": 12,
+    "position": 10,
+    "photo": "photos/2101772161.jpg"
+  },
+  {
+    "candidateNumber": "2101772058",
+    "name": "JAMES LOVETEE",
+    "pdfPage": 12,
+    "position": 11,
+    "photo": "photos/2101772058.jpg"
+  },
+  {
+    "candidateNumber": "2101772054",
+    "name": "HARMAN CHRIS",
+    "pdfPage": 12,
+    "position": 12,
+    "photo": "photos/2101772054.jpg"
+  },
+  {
+    "candidateNumber": "2101772153",
+    "name": "TRAWALLY DAOUDA A.",
+    "pdfPage": 12,
+    "position": 13,
+    "photo": "photos/2101772153.jpg"
+  },
+  {
+    "candidateNumber": "2101772095",
+    "name": "KPUWEE JAIRUS",
+    "pdfPage": 12,
+    "position": 14,
+    "photo": "photos/2101772095.jpg"
+  },
+  {
+    "candidateNumber": "2101772052",
+    "name": "GRAY ARMAH N.",
+    "pdfPage": 12,
+    "position": 16,
+    "photo": "photos/2101772052.jpg"
+  },
+  {
+    "candidateNumber": "2101772018",
+    "name": "BOWDIOR BESSIE G.",
+    "pdfPage": 13,
+    "position": 1,
+    "photo": "photos/2101772018.jpg"
+  },
+  {
+    "candidateNumber": "2101772131",
+    "name": "SESAY MASSA Y",
+    "pdfPage": 13,
+    "position": 2,
+    "photo": "photos/2101772131.jpg"
+  },
+  {
+    "candidateNumber": "2101772139",
+    "name": "SMITH OTHELLO D.",
+    "pdfPage": 13,
+    "position": 3,
+    "photo": "photos/2101772139.jpg"
+  },
+  {
+    "candidateNumber": "2101772144",
+    "name": "THOMAS PATIENCE M.",
+    "pdfPage": 13,
+    "position": 4,
+    "photo": "photos/2101772144.jpg"
+  },
+  {
+    "candidateNumber": "2101772148",
+    "name": "TOE SAMUEL W",
+    "pdfPage": 13,
+    "position": 5,
+    "photo": "photos/2101772148.jpg"
+  },
+  {
+    "candidateNumber": "2101772129",
+    "name": "SCOTT SETINA",
+    "pdfPage": 13,
+    "position": 6,
+    "photo": "photos/2101772129.jpg"
+  },
+  {
+    "candidateNumber": "2101772017",
+    "name": "BOWDIOR BEATRICE M.",
+    "pdfPage": 13,
+    "position": 7,
+    "photo": "photos/2101772017.jpg"
+  },
+  {
+    "candidateNumber": "2101772049",
+    "name": "GIZZIE MELVIN",
+    "pdfPage": 13,
+    "position": 8,
+    "photo": "photos/2101772049.jpg"
+  },
+  {
+    "candidateNumber": "2101772025",
+    "name": "DENNIS PRINCESS S",
+    "pdfPage": 13,
+    "position": 9,
+    "photo": "photos/2101772025.jpg"
+  },
+  {
+    "candidateNumber": "2101772078",
+    "name": "KANDAKAI BETTY",
+    "pdfPage": 13,
+    "position": 10,
+    "photo": "photos/2101772078.jpg"
+  }
+]

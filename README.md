@@ -12,7 +12,7 @@ Open http://localhost:8000. Use a web server rather than opening index.html dire
 
 ## Included data
 
-Two fictional demonstration students are included. Real student records, portraits, source PDFs, credentials and private deployment settings are excluded. The institutional letterhead is included.
+This public version includes the institution’s 177 student records and 110 matched portraits, published with the owner’s explicit authorization. Source PDFs, credentials and private deployment settings are excluded. The institutional letterhead is included.
 
 ## Workflows
 
@@ -29,12 +29,14 @@ For operational use, add staff authentication and authorization, a shared databa
 
 ## GitHub Pages
 
-A manual GitHub Actions workflow is provided. In Settings → Pages, choose GitHub Actions, then run Deploy static site under Actions. Availability depends on your repository visibility and GitHub plan. Hosting is not enabled automatically.
+The site is deployed through the Deploy static site GitHub Actions workflow. Changes pushed to main deploy automatically. The workflow can also be run manually.
+
+Public website: https://simeonojong.github.io/cmfi-student-records/
 
 ## Files
 
 - index.html: layout and styles
 - app.js: workflows and browser storage
 - document-template.mjs: gender-based wording and PDF rendering
-- student-roster.json: fictional example records
+- student-roster.json: imported student roster
 - cmfi-letterhead.png: institutional letterhead
