@@ -57,3 +57,5 @@ GitHub Pages serves the repository root from `main` and deploys updates automati
 ## Remaining limits
 
 PDF import supports selectable text, up to 10 MB, with a mandatory grade review. Scanned PDFs require manual entry. The system prepares draft documents, not legally signed credentials. Institution-name preferences remain local to the current browser. Production staff account lifecycle, backups and approval/signing policy must be maintained by the institution.
+
+The refined interface uses a navy welcome section, a restrained serif school wordmark, a concise quick-access directory, quieter academic panels, desktop sticky navigation and an expandable mobile menu. Desktop and 400px mobile layouts were checked in Chrome.
