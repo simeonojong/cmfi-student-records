@@ -40,3 +40,7 @@ Public website: https://simeonojong.github.io/cmfi-student-records/
 - document-template.mjs: gender-based wording and PDF rendering
 - student-roster.json: imported student roster
 - cmfi-letterhead.png: institutional letterhead
+
+## Interface design
+
+The dashboard and student directory use a purple sidebar, orange accents, rounded cards and a pale lavender workspace, inspired by the school dashboard reference supplied by the owner. Dashboard charts use actual roster completeness counts. The student directory supports name/candidate search, gender and status filters, and pagination. Student data and browser storage behavior are unchanged by this redesign.
