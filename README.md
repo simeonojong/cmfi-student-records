@@ -11,7 +11,12 @@ The public website and login interface are implemented. Shared authentication an
 
 ## Pages
 
-- `index.html`: public school records website.
+- `index.html`: school home page with links to dedicated pages.
+- `about.html`: school introduction and values.
+- `academics.html`: academic subject foundations.
+- `student-life.html`: student community.
+- `learning-hub.html`: expandable study guides.
+- `contact.html`: school office contacts and service links.
 - `verify.html`: document ID / QR-link lookup.
 - `student.html?document=SCH-…`: automatically opened student and document record.
 - `login.html`: staff email/password login and password reset/setup.
@@ -61,3 +66,5 @@ PDF import supports selectable text, up to 10 MB, with a mandatory grade review.
 The refined interface uses a navy welcome section, a bold geometric school wordmark, a concise quick-access directory, quieter academic panels, desktop sticky navigation and an expandable mobile menu. Desktop and 400px mobile layouts were checked in Chrome.
 
 Typography uses the locally hosted, open-source Outfit variable font for geometric display lettering inspired by the owner’s supplied font images, with DM Sans for readable body text. The image references are not font files; Outfit is a similar visual direction. The font license is included in `fonts/OFL-Outfit.txt`.
+
+School navigation opens each section as an individual HTML page. Current-page indicators and breadcrumbs show the visitor’s location. Older homepage section links redirect to the corresponding page, and study-guide links open the relevant guide on the Learning Hub page.
