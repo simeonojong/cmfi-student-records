@@ -68,3 +68,5 @@ The refined interface uses a navy welcome section, a bold geometric school wordm
 Typography uses the locally hosted, open-source Outfit variable font for geometric display lettering inspired by the owner’s supplied font images, with DM Sans for readable body text. The image references are not font files; Outfit is a similar visual direction. The font license is included in `fonts/OFL-Outfit.txt`.
 
 School navigation opens each section as an individual HTML page. Current-page indicators and breadcrumbs show the visitor’s location. Older homepage section links redirect to the corresponding page, and study-guide links open the relevant guide on the Learning Hub page.
+
+The school supplied the Melodrama font family. Display headings now use the exact Melodrama family through Fontshare’s official font API. Forms, navigation and academic data retain readable interface fonts and the enlarged text sizes. Font binaries supplied under the ITF Free Font License are not redistributed through this public code repository.
