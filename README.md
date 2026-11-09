@@ -29,7 +29,7 @@ For operational use, add staff authentication and authorization, a shared databa
 
 ## GitHub Pages
 
-The site is deployed through the Deploy static site GitHub Actions workflow. Changes pushed to main deploy automatically. The workflow can also be run manually.
+The site is deployed through GitHub Pages using the main branch and repository root. Changes pushed to main publish automatically. The custom Actions workflow was removed because Actions jobs are blocked by an account billing issue; standard branch-based Pages publishing succeeded.
 
 Public website: https://simeonojong.github.io/cmfi-student-records/
 
