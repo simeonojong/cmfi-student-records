@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {webcrypto} from 'node:crypto';
+import * as templates from '../document-template.mjs';
+test('staff workspace loads shared records and persists before PDF download',async()=>{
+ const roster=JSON.parse(fs.readFileSync(new URL('../student-roster.json',import.meta.url)));roster[0].status='Approved';roster[0].subjects=[['Mathematics',90]];
+ let revision=0,lastSave;const nodes={};let downloaded=false;
+ const globals={URL,Blob,console,crypto:webcrypto,setTimeout:()=>0,location:{href:'https://simeonojong.github.io/cmfi-student-records/dashboard.html'},localStorage:{getItem:()=>null,setItem(){}},document:{querySelector:s=>nodes[s]??={innerHTML:'',textContent:'',style:{},value:'',focus(){},setSelectionRange(){}}},fetch:async()=>({ok:true,json:async()=>roster})};
+ globals.window=globals;const context=vm.createContext(globals);
+ const backend=new vm.SyntheticModule(['requireStaff','loadWorkspace','saveWorkspace','logout'],function(){this.setExport('requireStaff',async()=>({role:'admin'}));this.setExport('loadWorkspace',async()=>({students:structuredClone(roster),documents:[],revision:0}));this.setExport('saveWorkspace',async(students,documents,current)=>{assert.equal(current,revision);lastSave={students:structuredClone(students),documents:structuredClone(documents)};return ++revision});this.setExport('logout',async()=>{});},{context});
+ const template=new vm.SyntheticModule(Object.keys(templates),function(){for(const [key,value] of Object.entries(templates))this.setExport(key,value)},{context});
+ const app=new vm.SourceTextModule(fs.readFileSync(new URL('../app.js',import.meta.url),'utf8'),{context});await app.link(specifier=>specifier==='./backend.mjs'?backend:template);await app.evaluate();
+ assert(nodes['#content'].innerHTML.includes('177'));globals.go('Students');assert(nodes['#content'].innerHTML.includes('Showing 1–12 of 177'));globals.globalSearch('2101772001');assert(nodes['#content'].innerHTML.includes('ABU KUMBA'));
+ nodes['#docStudent']={value:roster[0].id};globals.generate('Transcript',roster[0].id);nodes['#issue']={value:'2026-11-09'};nodes['#genderConfirmed'].checked=true;globals.download=async()=>{assert(lastSave.documents.length===1);downloaded=true};await nodes['#createDoc'].onclick();assert(downloaded);assert.equal(lastSave.documents[0].snapshot.name,roster[0].name);assert.match(lastSave.documents[0].id,/^SCH-[A-F0-9-]{36}$/);await globals.revoke(lastSave.documents[0].id);assert.equal(lastSave.documents[0].revoked,true);assert.equal(revision,2);
+});

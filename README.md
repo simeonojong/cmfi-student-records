@@ -1,6 +1,37 @@
-# CMFI Student Records
+# CMFI Academic Records
 
-A browser-based prototype for student profiles, text-based PDF report imports, and draft transcripts, recommendations and diplomas on CMFI letterhead. Recommendation wording follows the confirmed student gender.
+Public website, document verification and a separate school staff workspace for CMFI Bilingual High School.
+
+Website: https://simeonojong.github.io/cmfi-student-records/
+Staff login: https://simeonojong.github.io/cmfi-student-records/login.html
+
+## Current activation state
+
+The public website and login interface are implemented. Shared authentication and verification require a configured Supabase project and an authorized staff Auth account. `config.json` deliberately has empty public connection values until the project is connected. There is no default username/password in the code. An unconfigured service fails closed and displays an activation notice rather than accepting a fake password or claiming a document is invalid.
+
+## Pages
+
+- `index.html`: public school records website.
+- `verify.html`: document ID / QR-link lookup.
+- `student.html?document=SCH-…`: automatically opened student and document record.
+- `login.html`: staff email/password login and password reset/setup.
+- `dashboard.html`: staff workspace, requiring authenticated active staff membership.
+
+The public design uses oversized typography, a silver/lime orbital illustration, light surfaces and a dark feature section, inspired by the supplied Sapforce reference. The purple/orange administrative dashboard remains separate.
+
+## Shared records and authentication
+
+See `database/README.md` for setup and `database/001_shared_records.sql` for the migration. The implementation uses Supabase Auth with server-side staff membership checks and database RLS. No staff password or privileged key belongs in this repository. Only the project URL and publishable/anon key are put in `config.json`.
+
+Staff create or update students and draft documents in shared records. Saves use a database revision lock to reject stale overwrites. Existing document snapshots are immutable; their revocation status can change. Saves are recorded in an audit log. A public RPC looks up a precise document ID and returns its status, original document snapshot and associated student record. Anonymous users cannot call staff save/load endpoints or read the underlying tables directly.
+
+New document IDs use a full random UUID. Their QR codes point directly to the student verification page. Matching draft records remain explicitly labeled drafts pending institutional approval. Verification lookup works across devices after the backend is activated.
+
+An empty staff workspace offers an explicit import of the existing 177-student roster. Previous browser-only records can be imported from Settings without overwriting existing shared records. Source browser storage is retained as a backup.
+
+## Existing public data
+
+The repository contains 177 student records and 110 matched graduation portraits under the owner’s explicit authorization to publish these records to GitHub. Source PDFs, credentials and private deployment settings are excluded. Staff sign-in protects the new shared write APIs; it does not retract previously public static files or Git history.
 
 ## Run locally
 
@@ -8,39 +39,21 @@ A browser-based prototype for student profiles, text-based PDF report imports, a
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000. Use a web server rather than opening index.html directly: modules and JSON require HTTP. No build step is needed. Internet access is required for Google Fonts, jsPDF, QR generation and PDF.js.
+Open http://localhost:8000. A web server is required for JavaScript modules and JSON. No frontend build step is needed. Internet access is needed for fonts, Supabase JS, jsPDF, QR generation and PDF.js.
 
-## Included data
+## Validation
 
-This public version includes the institution’s 177 student records and 110 matched portraits, published with the owner’s explicit authorization. Source PDFs, credentials and private deployment settings are excluded. The institutional letterhead is included.
+```sh
+node --test tests/public.test.mjs
+node --experimental-vm-modules --test tests/workspace.test.mjs
+```
 
-## Workflows
+For database access tests, create a new disposable local PostgreSQL cluster and run, in order, `tests/auth-stubs.sql`, `database/001_shared_records.sql`, and `tests/permissions.sql` with `ON_ERROR_STOP=1`. The Auth stubs are test fixtures; do not run them against a Supabase project.
 
-- Add students and photos; review academic grades.
-- Import selectable-text PDF reports up to 10 MB and correct extracted grades. Scanned PDFs require manual entry.
-- Confirm gender, review personalized recommendations and generate draft PDFs.
-- Generate transcripts and diplomas; register and revoke drafts.
+## Hosting
 
-## Prototype limitations
+GitHub Pages serves the repository root from `main` and deploys updates automatically. Account billing blocked custom GitHub Actions jobs, so branch-based Pages publishing is used. Supabase provides the shared backend after activation.
 
-Student records, photos, documents and settings are saved in localStorage in each browser. They do not synchronize between coworkers or devices. A QR URL opens verification, but another browser cannot retrieve the issued document without a shared backend. Documents require institutional approval before official use.
+## Remaining limits
 
-For operational use, add staff authentication and authorization, a shared database and file storage, server-side document issuance and verification, backups and an audit trail. Publicly hosting these files does not protect records placed in the distributed JSON.
-
-## GitHub Pages
-
-The site is deployed through GitHub Pages using the main branch and repository root. Changes pushed to main publish automatically. The custom Actions workflow was removed because Actions jobs are blocked by an account billing issue; standard branch-based Pages publishing succeeded.
-
-Public website: https://simeonojong.github.io/cmfi-student-records/
-
-## Files
-
-- index.html: layout and styles
-- app.js: workflows and browser storage
-- document-template.mjs: gender-based wording and PDF rendering
-- student-roster.json: imported student roster
-- cmfi-letterhead.png: institutional letterhead
-
-## Interface design
-
-The dashboard and student directory use a purple sidebar, orange accents, rounded cards and a pale lavender workspace, inspired by the school dashboard reference supplied by the owner. Dashboard charts use actual roster completeness counts. The student directory supports name/candidate search, gender and status filters, and pagination. Student data and browser storage behavior are unchanged by this redesign.
+PDF import supports selectable text, up to 10 MB, with a mandatory grade review. Scanned PDFs require manual entry. The system prepares draft documents, not legally signed credentials. Institution-name preferences remain local to the current browser. Production staff account lifecycle, backups and approval/signing policy must be maintained by the institution.
