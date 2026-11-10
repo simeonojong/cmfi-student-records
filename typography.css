@@ -29,3 +29,9 @@ button,input,select,textarea,.nav-links,.nav-actions,.mobile-school-links,.guide
 .school-about-cards h3,.academic-card h3{font-weight:500}
 .school-page-intro h1,.standalone-cta h2{font-family:var(--font-display);font-weight:600;letter-spacing:0}
 .hero-art-caption strong,.student-life-label strong{font-weight:500}
+
+/* Static fallback keeps the development credit visible while shared scripts update. */
+.school-footer .footer-bottom{position:relative}
+.school-footer .footer-bottom::after{content:'Powered by SouMed Technologies · soumed.org';color:#8ea5b9;font-size:14px}
+.school-footer .footer-bottom.has-soumed-credit::after{content:none}
+@media(max-width:700px){.school-footer .footer-bottom::after{display:block;width:100%;margin-top:4px}}
