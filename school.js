@@ -24,6 +24,16 @@ for(const bar of document.querySelectorAll('.topbar-inner')){
 for(const footer of document.querySelectorAll('.school-footer-grid>div:last-child')){
  if(!footer.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow us on Facebook ↗';footer.appendChild(link)}
 }
+for(const footer of document.querySelectorAll('.school-footer-grid>div:last-child')){
+ if(!footer.querySelector('[data-school-whatsapp]')){const link=document.createElement('a');link.href='https://wa.me/231880755412';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolWhatsapp='true';link.textContent='WhatsApp: +231 88 075 5412';footer.appendChild(link)}
+ if(!footer.querySelector('[data-school-direct-call]')){const link=document.createElement('a');link.href='tel:+231777755413';link.dataset.schoolDirectCall='true';link.textContent='Direct call: 0777 755 413';footer.appendChild(link)}
+}
+const contactDetails=document.querySelector('.contact-info-card dl');
+if(contactDetails&&!contactDetails.querySelector('[data-school-whatsapp]')){
+ const addContact=(label,text,href,options={})=>{const item=document.createElement('div');const term=document.createElement('dt');term.textContent=label;const description=document.createElement('dd');const link=document.createElement('a');link.href=href;link.textContent=text;Object.assign(link,options);description.appendChild(link);item.append(term,description);contactDetails.appendChild(item)};
+ addContact('WhatsApp','+231 88 075 5412','https://wa.me/231880755412',{target:'_blank',rel:'noopener noreferrer'});
+ addContact('Direct call','0777 755 413','tel:+231777755413');
+}
 for(const explore of document.querySelectorAll('.school-footer-grid>div:nth-child(2)')){
  for(const [href,label] of [['admissions.html','Admissions'],['graduates.html','Graduates']]){
   if(!explore.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;explore.appendChild(link)}
