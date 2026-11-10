@@ -30,13 +30,33 @@ export function renderWording(template,student){
 function drawDiploma(pdf,d,assets){
  const s=d.snapshot||{};
  pdf.addImage(assets.diplomaTemplate,'JPEG',0,0,297,210);
+
+ // The supplied artwork already contains the complete official certificate
+ // wording, date, seal and signatures. Only the variable identity details are
+ // typeset here. Keep them in the artwork's name area and calculate the
+ // centre from the page so every name stays aligned, regardless of length.
+ const pageWidth=pdf.internal?.pageSize?.getWidth?.()||297;
+ const centerX=pageWidth/2;
+ const name=String(s.name||'').trim().replace(/\s+/g,' ').toUpperCase();
+ const candidate=String(s.id||'').trim();
  pdf.setTextColor(71,47,30);
  pdf.setFont('times','bold');
- pdf.setFontSize(21);
- pdf.text(String(s.name||'').toUpperCase(),148.5,98,{align:'center'});
+ // The name line on the scan sits just above the first italic sentence.
+ // `baseline: middle` keeps the visible letters centred on that line rather
+ // than leaving the descenders hanging below it.
+ let nameSize=21;
+ pdf.setFontSize(nameSize);
+ if(typeof pdf.getTextWidth==='function'){
+  while(nameSize>14&&pdf.getTextWidth(name)>184){nameSize-=.5;pdf.setFontSize(nameSize)}
+ }
+ pdf.text(name,centerX,95.7,{align:'center',baseline:'middle'});
+
+ // Put the candidate number in the clear space below the certification line,
+ // above the name rule. This avoids colliding with the official italic text.
  pdf.setFont('times','normal');
- pdf.setFontSize(9);
- pdf.text('Candidate / student number: '+(s.id||''),148.5,112,{align:'center'});
+ pdf.setFontSize(7.5);
+ pdf.setTextColor(84,58,41);
+ pdf.text('Candidate / student number: '+candidate,centerX,86.4,{align:'center',baseline:'middle'});
  if(assets.qr){
   pdf.setFillColor(255,255,255);pdf.roundedRect(264,164,28,36,2,2,'F');
   pdf.addImage(assets.qr,'GIF',267,167,22,22);
