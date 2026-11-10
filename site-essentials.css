@@ -1,0 +1,48 @@
+.essential-section{padding:78px 0;background:#f5f7fa}
+.essential-section.essential-cream{background:#f8f3ee}
+.essential-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.essential-card{background:#fff;border:1px solid #e2e8ee;border-radius:9px;padding:28px;display:flex;flex-direction:column;min-height:240px}
+.essential-card .eyebrow{font-size:12px;line-height:1.6}
+.essential-card h2,.essential-card h3{font:500 25px/1.25 'Outfit','DM Sans',sans-serif;letter-spacing:-.6px;color:#173c68;margin:17px 0 12px}
+.essential-card p{font-size:16px;line-height:1.85;color:#7b8996;margin:0 0 20px}
+.essential-card a{margin-top:auto;color:#8d6345;font-size:15px;font-weight:600}
+.essential-card.featured{background:#173c68;color:white;border-color:#173c68}
+.essential-card.featured .eyebrow{color:#d9c3af}
+.essential-card.featured .eyebrow:before{background:#d9c3af}
+.essential-card.featured h2,.essential-card.featured h3{color:white}
+.essential-card.featured p{color:#d2deea}
+.essential-card.featured a{color:#ead2bd}
+.essential-intro{max-width:700px;margin-bottom:34px}
+.essential-intro h2{font:500 clamp(30px,3vw,43px)/1.2 'Outfit','DM Sans',sans-serif;letter-spacing:-1px;color:#173c68;margin:18px 0 13px}
+.essential-intro p{font-size:17px;line-height:1.9;color:#778695;margin:0}
+.admissions-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:start}
+.admissions-panel{background:#fff;border:1px solid #e2e8ee;border-radius:9px;padding:31px}
+.admissions-panel h2{font:500 26px/1.3 'Outfit','DM Sans',sans-serif;color:#173c68;margin:0 0 20px}
+.admissions-panel p{font-size:16px;line-height:1.9;color:#7b8996;margin:0 0 18px}
+.admissions-list{list-style:none;margin:0;padding:0}
+.admissions-list li{position:relative;padding:15px 0 15px 30px;border-top:1px solid #edf0f2;font-size:16px;line-height:1.75;color:#536b80}
+.admissions-list li:before{content:'↗';position:absolute;left:0;top:15px;color:#9b6c4b}
+.admissions-list strong{display:block;color:#234967;margin-bottom:3px}
+.admissions-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:28px}
+.admission-step{border-top:1px solid #dfe6ed;padding-top:18px}
+.admission-step b{font:500 14px 'Outfit','DM Sans',sans-serif;color:#a57c5e;letter-spacing:1px}
+.admission-step h3{font:500 19px/1.35 'Outfit','DM Sans',sans-serif;color:#173c68;margin:12px 0 9px}
+.admission-step p{font-size:15px;line-height:1.8;color:#82909c;margin:0}
+.news-grid{display:grid;grid-template-columns:1.35fr .8fr .8fr;gap:18px}
+.news-card{background:#fff;border:1px solid #e2e8ee;border-radius:9px;padding:28px;min-height:255px;display:flex;flex-direction:column}
+.news-card:first-child{background:#f5eee7;border-color:#e4d5c7}
+.news-card .news-meta{font-size:12px;letter-spacing:1.2px;color:#a17b5d;text-transform:uppercase}
+.news-card h2,.news-card h3{font:500 24px/1.3 'Outfit','DM Sans',sans-serif;color:#173c68;margin:17px 0 12px}
+.news-card p{font-size:16px;line-height:1.85;color:#7b8996;margin:0 0 20px}
+.news-card a{margin-top:auto;color:#8d6345;font-size:15px;font-weight:600}
+.news-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.news-list article{padding:22px 0;border-top:1px solid #dfe6ed}
+.news-list time{font-size:13px;color:#a17c60;letter-spacing:.7px}
+.news-list h3{font:500 19px/1.4 'Outfit','DM Sans',sans-serif;color:#234967;margin:9px 0 7px}
+.news-list p{font-size:15px;line-height:1.8;color:#82909c;margin:0}
+.social-callout{background:#173c68;color:white;border-radius:9px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:30px}
+.social-callout h2{font:500 25px 'Outfit','DM Sans',sans-serif;margin:0 0 8px}
+.social-callout p{font-size:16px;line-height:1.8;color:#d2deea;margin:0}
+.social-callout .btn{white-space:nowrap}
+@media(max-width:950px){.essential-grid{grid-template-columns:1fr 1fr}.admissions-layout{grid-template-columns:1fr}.admissions-steps{grid-template-columns:repeat(2,1fr)}.news-grid{grid-template-columns:1fr 1fr}.news-grid .news-card:first-child{grid-column:1/-1}.news-list{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.essential-section{padding:50px 0}.essential-grid,.news-grid,.news-list{grid-template-columns:1fr}.news-grid .news-card:first-child{grid-column:auto}.essential-card,.news-card,.admissions-panel{padding:24px}.essential-card h2,.essential-card h3,.news-card h2,.news-card h3{font-size:23px}.essential-intro h2{font-size:31px}.essential-intro p{font-size:16px}.admissions-steps{grid-template-columns:1fr;gap:21px}.social-callout{display:block;padding:25px}.social-callout .btn{margin-top:20px;width:100%}}
