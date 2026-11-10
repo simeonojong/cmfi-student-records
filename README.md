@@ -7,7 +7,7 @@ Staff login: https://simeonojong.github.io/cmfi-student-records/login.html
 
 ## Current activation state
 
-The public website and login interface are implemented. Shared authentication and verification require a configured Supabase project and an authorized staff Auth account. `config.json` deliberately has empty public connection values until the project is connected. There is no default username/password in the code. An unconfigured service fails closed and displays an activation notice rather than accepting a fake password or claiming a document is invalid.
+The public website is connected to the school’s Supabase project. The protected shared-record tables and RPCs are provisioned, and anonymous access tests have passed. Staff login requires an Auth user with active membership in `cmfi_staff`. The administrator chooses their own password through Supabase; no password or privileged service key is stored in this repository. `config.json` contains only the project URL and its publishable client key.
 
 ## Pages
 
@@ -70,3 +70,5 @@ Typography uses the locally hosted, open-source Outfit variable font for geometr
 School navigation opens each section as an individual HTML page. Current-page indicators and breadcrumbs show the visitor’s location. Older homepage section links redirect to the corresponding page, and study-guide links open the relevant guide on the Learning Hub page.
 
 The school supplied the Melodrama font family. Display headings now use the exact Melodrama family through Fontshare’s official font API. Forms, navigation and academic data retain readable interface fonts and the enlarged text sizes. Font binaries supplied under the ITF Free Font License are not redistributed through this public code repository.
+
+Production authentication is configured for the GitHub Pages site, including exact login and password-reset redirects. Public account signup is disabled; staff accounts are managed by the school administrator.

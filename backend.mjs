@@ -4,7 +4,7 @@ export class SetupRequiredError extends Error {
 let clientPromise;
 export async function getClient(){
  if(!clientPromise)clientPromise=(async()=>{
-  const response=await fetch(new URL('./config.json',import.meta.url),{cache:'no-store'});
+  const response=await fetch(new URL('./config.json?v=database-20261110',import.meta.url),{cache:'no-store'});
   if(!response.ok)throw new SetupRequiredError();
   const config=await response.json();
   if(!config.supabaseUrl||!config.supabasePublishableKey)throw new SetupRequiredError();
