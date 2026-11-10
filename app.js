@@ -68,11 +68,11 @@ function safeFileName(value){return String(value||'student').replace(/[^a-z0-9]+
 async function createPdfBlob(d,assets){
  const snapshot=d.snapshot||students.find(s=>s.id===d.student);if(!snapshot)throw Error('Student record not found');
  const options={...assets,qr:qrFor(d)};
- const pdf=d.type==='Diploma'?new window.jspdf.jsPDF({orientation:'landscape',unit:'mm',format:'a4'}):new window.jspdf.jsPDF({unit:'mm',format:'a4'});
+ const pdf=d.type==='Diploma'?new window.jspdf.jsPDF({orientation:'landscape',unit:'mm',format:'a4',compress:true}):new window.jspdf.jsPDF({unit:'mm',format:'a4',compress:true});
  drawDocument(pdf,{...d,snapshot},options);return pdf.output('blob');
 }
 window.download=async id=>{const d=docs.find(d=>d.id===id);if(!d)return;if(!window.jspdf)return toast('PDF library unavailable. Reload with internet access.');try{
- const [letterhead,officialPage,diplomaTemplate]=await Promise.all([loadAsset('./cmfi-letterhead.png'),loadAsset('./official-school-letterhead.jpg'),loadAsset('./official-diploma-template.jpg')]);
+ const [letterhead,officialPage,diplomaTemplate]=await Promise.all([loadAsset('./cmfi-letterhead.png'),loadAsset('./official-school-letterhead-web.jpg'),loadAsset('./official-diploma-template-web.jpg')]);
  const blob=await createPdfBlob(d,{letterhead,officialPage,diplomaTemplate});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=safeFileName(d.snapshot?.name||d.student)+'-'+d.type.toLowerCase().replace(/[^a-z]+/g,'-')+'.pdf';a.click();URL.revokeObjectURL(url);toast('PDF downloaded from the official school template');
 }catch(e){toast('PDF generation failed: '+e.message)}};
 window.bulkExport=()=>{
@@ -88,21 +88,27 @@ async function runBulkExport(selection){
  if(!kinds.length)return toast('Choose at least one document type');
  const candidates=chosen.filter(s=>(!kinds.includes('Transcript')||(Array.isArray(s.subjects)&&s.subjects.length))&&(!kinds.includes('Recommendation letter')||(s.gender==='Male'||s.gender==='Female')));
  if(!candidates.length)return toast('No approved students are ready for the selected documents');
- closeModal();toast('Preparing the official templates…');
+ closeModal();modal(`<h2>Preparing the official ZIP</h2><p id="bulkStatus">Loading the school templates…</p><progress id="bulkBar" value="0" max="100" style="width:100%;height:12px"></progress><p class="sub">Keep this page open while the PDFs are created. You can continue when the download starts.</p>`);
  try{
-  const [letterhead,officialPage,diplomaTemplate]=await Promise.all([loadAsset('./cmfi-letterhead.png'),loadAsset('./official-school-letterhead.jpg'),loadAsset('./official-diploma-template.jpg')]);
+  const [letterhead,officialPage,diplomaTemplate]=await Promise.all([loadAsset('./cmfi-letterhead.png'),loadAsset('./official-school-letterhead-web.jpg'),loadAsset('./official-diploma-template-web.jpg')]);
   const zip=new window.JSZip();const index=['Student,Student ID,Document type,Document ID,Verification URL'];let created=0,now=new Date().toISOString().slice(0,10),newDocs=[];
+  const totalWork=candidates.reduce((total,student)=>total+kinds.filter(type=>(type!=='Transcript'||student.subjects?.length)&&(type!=='Recommendation letter'||student.gender==='Male'||student.gender==='Female')).length,0);
+  const updateProgress=(message,done=created)=>{const status=$('#bulkStatus'),bar=$('#bulkBar');if(status)status.textContent=message;if(bar)bar.value=totalWork?Math.round(done/totalWork*100):0};
+  updateProgress('Creating personalized PDFs…',0);
   for(const student of candidates){
    for(const type of kinds){
     if(type==='Transcript'&&(!student.subjects||!student.subjects.length))continue;if(type==='Recommendation letter'&&!(student.gender==='Male'||student.gender==='Female'))continue;
     let d=docs.find(existing=>existing.student===student.id&&existing.type===type&&!existing.revoked&&existing.templateVersion==='cmfi-official-v2');
     if(!d){let letter;try{letter=type==='Recommendation letter'?renderWording(recommendationTemplate,student):undefined}catch(error){continue}d={id:'SCH-'+crypto.randomUUID().toUpperCase(),student:student.id,type,date:now,letter,revoked:false,snapshot:JSON.parse(JSON.stringify(student)),institution:'CMFI Bilingual High School',templateVersion:'cmfi-official-v2'};docs.unshift(d);newDocs.push(d)}
     const blob=await createPdfBlob(d,{letterhead,officialPage,diplomaTemplate});zip.file(`${safeFileName(student.name)}/${type.toLowerCase().replace(/[^a-z]+/g,'-')}.pdf`,blob);index.push([student.name,student.id,type,d.id,verifyURL(d)].map(value=>'"'+String(value).replaceAll('"','""')+'"').join(','));created++;
-    if(created%6===0)toast('Preparing official PDFs · '+created);
+    updateProgress('Creating personalized PDFs · '+created+' of '+totalWork,created);
+    if(created%2===0)await new Promise(resolve=>setTimeout(resolve,0));
    }
   }
-  if(newDocs.length)await save();zip.file('verification-index.csv',index.join('\n'));zip.file('README.txt','CMFI Bilingual High School\nBulk document export\n\nOnly approved student records are included. Each PDF contains a QR code linking to its public verification page. Documents require authorized school signatures before release.\n');const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='cmfi-official-documents-'+now+'.zip';a.click();URL.revokeObjectURL(url);render();toast('ZIP download ready · '+created+' PDFs');
- }catch(error){toast('Bulk export failed: '+error.message)}
+  if(newDocs.length)await save();zip.file('verification-index.csv',index.join('\n'));zip.file('README.txt','CMFI Bilingual High School\nBulk document export\n\nOnly approved student records are included. Each PDF contains a QR code linking to its public verification page. Documents require authorized school signatures before release.\n');
+  updateProgress('Compressing the ZIP for download…',totalWork);const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE'},metadata=>{const status=$('#bulkStatus'),bar=$('#bulkBar');if(status)status.textContent='Compressing the ZIP · '+Math.round(metadata.percent)+'%';if(bar)bar.value=metadata.percent});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='cmfi-official-documents-'+now+'.zip';a.click();URL.revokeObjectURL(url);closeModal();render();toast('ZIP download ready · '+created+' PDFs');
+ }catch(error){closeModal();toast('Bulk export failed: '+error.message)}
 }
 window.verify=id=>{const url=new URL('./student.html?document='+encodeURIComponent(id.trim()),location.href);window.open(url.href,'_blank','noopener')};
 window.revoke=async id=>{const d=docs.find(d=>d.id===id);d.revoked=!d.revoked;await save();render();toast(d.revoked?'Document revoked in shared records':'Document restored in shared records')};
