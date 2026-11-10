@@ -20,6 +20,14 @@ test('matching drafts are never labeled official credentials',()=>{
  const html=profileHTML({student:{name:'Test Student',id:'ID'},document:{id:'SCH-1234ABCD',type:'Transcript',revoked:false,snapshot:{subjects:[]}}});
  assert(html.includes('Active draft'));assert(html.includes('does not replace the school’s official approval'));assert(html.includes('No academic results'));
 });
+test('verified profiles include linked WASSCE results and all document types',()=>{
+ const html=profileHTML({student:{name:'Test Student',id:'ID',gender:'Female',subjects:[['Mathematics',90]],source:'WASSCE 2026 result'},document:{id:'SCH-1234ABCD',type:'Transcript',revoked:false,date:'2026-11-10',snapshot:{subjects:[['Mathematics',90]]}},documents:[
+  {id:'SCH-1234ABCD',type:'Transcript',revoked:false,date:'2026-11-10'},
+  {id:'SCH-5678ABCD',type:'Recommendation letter',revoked:false,date:'2026-11-10',letter:'We recommend her.'},
+  {id:'SCH-9012ABCD',type:'Diploma',revoked:false,date:'2026-11-10'}
+ ]});
+ assert(html.includes('WASSCE result and grades'));assert(html.includes('WASSCE 2026 result'));assert(html.includes('Mathematics'));assert(html.includes('Recommendation letter'));assert(html.includes('Diploma'));assert(html.includes('We recommend her.'));
+});
 test('official recommendation wording follows the confirmed gender',()=>{
  const female=renderWording(recommendationTemplate,{name:'Ada Student',id:'2101772001',year:'2026',gender:'Female'});
  const male=renderWording(recommendationTemplate,{name:'Ben Student',id:'2101772002',year:'2026',gender:'Male'});

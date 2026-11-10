@@ -92,7 +92,7 @@ create function public.cmfi_verify_document(credential_id text) returns jsonb
 declare result jsonb;
 begin
  if credential_id is null or length(credential_id)>80 or upper(credential_id) !~ '^SCH-[A-F0-9-]{8,40}$' then return null;end if;
- select jsonb_build_object('document',d.payload||jsonb_build_object('revoked',d.revoked),'student',s.record,'checkedAt',now()) into result
+ select jsonb_build_object('document',d.payload||jsonb_build_object('revoked',d.revoked),'documents',coalesce((select jsonb_agg(other.payload||jsonb_build_object('revoked',other.revoked) order by other.created_at desc,other.id) from public.cmfi_documents other where other.student_id=d.student_id),'[]'::jsonb),'student',s.record,'checkedAt',now()) into result
  from public.cmfi_documents d join public.cmfi_students s on s.id=d.student_id where d.id=upper(credential_id);
  return result;
 end$$;
