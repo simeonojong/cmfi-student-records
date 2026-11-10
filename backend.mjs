@@ -65,3 +65,5 @@ export function normalizeCredential(value){
 }
 export async function publicRecord(value){const credential=normalizeCredential(value);const client=await getClient();const {data,error}=await client.rpc('cmfi_verify_document',{credential_id:credential});if(error)throw new Error('The verification service could not be reached. Please try again.');return data;}
 export async function publicGraduates(){const client=await getClient();const {data,error}=await client.rpc('cmfi_public_graduates');if(error)throw error;return Array.isArray(data)?data:[];}
+export async function saveGalleryPhotos(photoRecords){const client=await getClient();const {data,error}=await client.rpc('cmfi_save_gallery_photos',{photo_records:photoRecords});if(error)throw new Error(error.message);return Array.isArray(data)?data:[];}
+export async function publicGalleryPhotos(){const client=await getClient();const {data,error}=await client.rpc('cmfi_public_gallery_photos');if(error)throw error;return Array.isArray(data)?data:[];}
