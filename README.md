@@ -72,3 +72,9 @@ School navigation opens each section as an individual HTML page. Current-page in
 The school supplied the Melodrama font family. Display headings now use the exact Melodrama family through Fontshare’s official font API. Forms, navigation and academic data retain readable interface fonts and the enlarged text sizes. Font binaries supplied under the ITF Free Font License are not redistributed through this public code repository.
 
 Production authentication is configured for the GitHub Pages site, including exact login and password-reset redirects. Public account signup is disabled; staff accounts are managed by the school administrator.
+
+## Bulk WASSCE grades and graduate photos
+
+In the staff workspace, open **Report uploads → Bulk WASSCE grades**. The importer accepts a CSV with `student_id,student_name,subject,score` rows (see `cmfi-wassce-grades-template.csv`) or one row per student with subject columns. It previews matches by candidate number or exact name, lets the registrar approve the batch, and leaves unmatched rows visible for correction.
+
+Open **Students → Upload student photos** to select several JPG, PNG or WEBP portraits. File names are matched to student IDs or names, resized in the browser and saved to the shared record. A student’s record also has an individual **Add/Replace photo** action. Public portraits are shown on `graduates.html`; apply the `cmfi_public_graduates()` function at the end of `database/001_shared_records.sql` in Supabase to make the live shared gallery use the same records.

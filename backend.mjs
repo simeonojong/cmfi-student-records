@@ -64,3 +64,4 @@ export function normalizeCredential(value){
  return id.toUpperCase();
 }
 export async function publicRecord(value){const credential=normalizeCredential(value);const client=await getClient();const {data,error}=await client.rpc('cmfi_verify_document',{credential_id:credential});if(error)throw new Error('The verification service could not be reached. Please try again.');return data;}
+export async function publicGraduates(){const client=await getClient();const {data,error}=await client.rpc('cmfi_public_graduates');if(error)throw error;return Array.isArray(data)?data:[];}

@@ -1,4 +1,5 @@
 const routes={'our-school':'about.html',academics:'academics.html','student-life':'student-life.html','learning-hub':'learning-hub.html',verification:'verify.html'};
+for(const nav of document.querySelectorAll('.nav-links,.mobile-school-links')){if(!nav.querySelector('a[href="graduates.html"]')){const link=document.createElement('a');link.href='graduates.html';link.textContent='Graduates';nav.appendChild(link)}}
 function handlePageLink(){
  const id=location.hash.slice(1),page=location.pathname.split('/').pop()||'index.html';
  // Preserve bookmarks and links shared before the individual pages were created.
