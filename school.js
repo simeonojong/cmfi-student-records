@@ -18,23 +18,13 @@ for(const nav of document.querySelectorAll('.nav-links')){
   if(extraLinks.some(link=>link.classList.contains('is-current')||link.getAttribute('aria-current')==='page')){more.open=true;summary.setAttribute('aria-current','page')}
  }
 }
+for(const link of document.querySelectorAll('.topbar-inner [data-school-whatsapp],.topbar-inner [data-school-direct-call],.school-footer-grid [data-school-whatsapp],.school-footer-grid [data-school-direct-call]'))link.remove();
+for(const link of document.querySelectorAll('.contact-info-card [data-school-whatsapp],.contact-info-card [data-school-direct-call]'))link.closest('div')?.remove();
 for(const bar of document.querySelectorAll('.topbar-inner')){
  if(!bar.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow CMFI on Facebook ↗';bar.appendChild(link)}
- if(!bar.querySelector('[data-school-whatsapp]')){const link=document.createElement('a');link.href='https://wa.me/231880755412';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolWhatsapp='true';link.textContent='WhatsApp +231 88 075 5412';bar.appendChild(link)}
- if(!bar.querySelector('[data-school-direct-call]')){const link=document.createElement('a');link.href='tel:+231777755413';link.dataset.schoolDirectCall='true';link.textContent='Call 0777 755 413';bar.appendChild(link)}
 }
 for(const footer of document.querySelectorAll('.school-footer-grid>div:last-child')){
  if(!footer.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow us on Facebook ↗';footer.appendChild(link)}
-}
-for(const footer of document.querySelectorAll('.school-footer-grid>div:last-child')){
- if(!footer.querySelector('[data-school-whatsapp]')){const link=document.createElement('a');link.href='https://wa.me/231880755412';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolWhatsapp='true';link.textContent='WhatsApp: +231 88 075 5412';footer.appendChild(link)}
- if(!footer.querySelector('[data-school-direct-call]')){const link=document.createElement('a');link.href='tel:+231777755413';link.dataset.schoolDirectCall='true';link.textContent='Direct call: 0777 755 413';footer.appendChild(link)}
-}
-const contactDetails=document.querySelector('.contact-info-card dl');
-if(contactDetails&&!contactDetails.querySelector('[data-school-whatsapp]')){
- const addContact=(label,text,href,options={})=>{const item=document.createElement('div');const term=document.createElement('dt');term.textContent=label;const description=document.createElement('dd');const link=document.createElement('a');link.href=href;link.textContent=text;Object.assign(link,options);description.appendChild(link);item.append(term,description);contactDetails.appendChild(item)};
- addContact('WhatsApp','+231 88 075 5412','https://wa.me/231880755412',{target:'_blank',rel:'noopener noreferrer'});
- addContact('Direct call','0777 755 413','tel:+231777755413');
 }
 for(const explore of document.querySelectorAll('.school-footer-grid>div:nth-child(2)')){
  for(const [href,label] of [['admissions.html','Admissions'],['graduates.html','Graduates']]){
@@ -43,6 +33,8 @@ for(const explore of document.querySelectorAll('.school-footer-grid>div:nth-chil
 }
 for(const footer of document.querySelectorAll('.footer-bottom')){
  if(!footer.querySelector('[data-soumed-credit]')){const credit=document.createElement('span');credit.className='soumed-credit';credit.dataset.soumedCredit='true';credit.append('Powered by ');const link=document.createElement('a');link.href='https://soumed.org';link.target='_blank';link.rel='noopener noreferrer';link.textContent='SouMed Technologies';credit.append(link);footer.appendChild(credit)}
+ const credit=footer.querySelector('[data-soumed-credit]');
+ if(credit&&!credit.querySelector('[data-soumed-whatsapp]')){credit.append(' · ');const link=document.createElement('a');link.href='https://wa.me/231880755412';link.target='_blank';link.rel='noopener noreferrer';link.dataset.soumedWhatsapp='true';link.textContent='WhatsApp +231 88 075 5412';credit.append(link);credit.append(' · ');const call=document.createElement('a');call.href='tel:+231777755413';call.dataset.soumedDirectCall='true';call.textContent='Call 0777 755 413';credit.append(call)}
  footer.classList.add('has-soumed-credit');
 }
 if(!document.querySelector('link[data-site-essentials]')){const link=document.createElement('link');link.rel='stylesheet';link.href='site-essentials.css?v=school-pages-20261110-soumed-responsive';link.dataset.siteEssentials='true';document.head.appendChild(link)}
@@ -63,6 +55,7 @@ function enhancePublicExperience(){
  document.querySelectorAll('.mobile-school-links a').forEach(link=>link.addEventListener('click',()=>{const menu=link.closest('details');if(menu)menu.open=false}));
 }
 enhancePublicExperience();
+for(const links of document.querySelectorAll('.platform-contact-links'))links.innerHTML='<a href="contact.html">Contact the school office ↗</a><a href="verify.html">Verify a document ↗</a>';
 function handlePageLink(){
  const id=location.hash.slice(1),page=location.pathname.split('/').pop()||'index.html';
  // Preserve bookmarks and links shared before the individual pages were created.
