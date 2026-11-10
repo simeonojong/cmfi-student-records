@@ -4,6 +4,7 @@ import {normalizeCredential,getClient,SetupRequiredError} from '../backend.mjs';
 globalThis.document={querySelectorAll:()=>[],querySelector:()=>null};
 globalThis.location={search:''};
 const {safePhoto,profileHTML}=await import('../public.mjs');
+import {recommendationTemplate,renderWording} from '../document-template.mjs';
 test('credential IDs accept QR links without following external URLs',()=>{
  assert.equal(normalizeCredential('sch-1234abcd'),'SCH-1234ABCD');
  assert.equal(normalizeCredential('https://example.test/student.html?document=SCH-12345678-1234-1234-1234-123456789ABC'),'SCH-12345678-1234-1234-1234-123456789ABC');
@@ -18,6 +19,12 @@ test('student profiles escape untrusted fields and block unsafe photo URLs',()=>
 test('matching drafts are never labeled official credentials',()=>{
  const html=profileHTML({student:{name:'Test Student',id:'ID'},document:{id:'SCH-1234ABCD',type:'Transcript',revoked:false,snapshot:{subjects:[]}}});
  assert(html.includes('Active draft'));assert(html.includes('does not replace the school’s official approval'));assert(html.includes('No academic results'));
+});
+test('official recommendation wording follows the confirmed gender',()=>{
+ const female=renderWording(recommendationTemplate,{name:'Ada Student',id:'2101772001',year:'2026',gender:'Female'});
+ const male=renderWording(recommendationTemplate,{name:'Ben Student',id:'2101772002',year:'2026',gender:'Male'});
+ assert(female.includes('her transcript'));assert(female.includes('she will prove herself trustworthy'));assert(!female.includes(' his '));
+ assert(male.includes('his transcript'));assert(male.includes('he will prove himself trustworthy'));assert(!male.includes(' her '));
 });
 test('missing backend configuration fails closed',async()=>{
  globalThis.fetch=async()=>({ok:true,json:async()=>({supabaseUrl:'',supabasePublishableKey:''})});
