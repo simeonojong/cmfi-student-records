@@ -15,6 +15,7 @@ The public website is connected to the school’s Supabase project. The protecte
 - `about.html`: school introduction and values.
 - `academics.html`: academic subject foundations.
 - `student-life.html`: student community.
+- `graduates.html`: public graduate portrait gallery.
 - `learning-hub.html`: expandable study guides.
 - `contact.html`: school office contacts and service links.
 - `verify.html`: document ID / QR-link lookup.
