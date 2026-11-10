@@ -29,6 +29,9 @@ for(const explore of document.querySelectorAll('.school-footer-grid>div:nth-chil
   if(!explore.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;explore.appendChild(link)}
  }
 }
+for(const footer of document.querySelectorAll('.footer-bottom')){
+ if(!footer.querySelector('[data-soumed-credit]')){const credit=document.createElement('span');credit.className='soumed-credit';credit.dataset.soumedCredit='true';credit.append('Powered by ');const link=document.createElement('a');link.href='https://soumed.org';link.target='_blank';link.rel='noopener noreferrer';link.textContent='SouMed Technologies';credit.append(link);footer.appendChild(credit)}
+}
 if(!document.querySelector('link[data-site-essentials]')){const link=document.createElement('link');link.rel='stylesheet';link.href='site-essentials.css?v=school-pages-20261110';link.dataset.siteEssentials='true';document.head.appendChild(link)}
 function injectHomeEssentials(){
  const main=document.querySelector('main');

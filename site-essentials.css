@@ -47,6 +47,9 @@
 .nav-more>div{position:absolute;right:0;top:calc(100% + 12px);z-index:25;min-width:175px;padding:7px;background:#fff;border:1px solid #e3e8ed;border-radius:7px;box-shadow:0 15px 35px #1734511a}
 .nav-more>div a{display:block!important;padding:10px 12px;color:#52657a;text-align:left!important;border-radius:4px}
 .nav-more>div a:hover{background:#f4f7f9;color:#926344}
+.soumed-credit{color:#8ea5b9}
+.soumed-credit a{color:#e6c9b3;font-weight:600}
+.soumed-credit a:hover{text-decoration:underline}
 @media(min-width:1281px){.public-nav .nav-links>a[href="learning-hub.html"],.public-nav .nav-links>a[href="graduates.html"]{display:none}}
 @media(max-width:950px){.essential-grid{grid-template-columns:1fr 1fr}.admissions-layout{grid-template-columns:1fr}.admissions-steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:1280px){.nav-more{display:none}}
