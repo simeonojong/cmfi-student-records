@@ -44,5 +44,11 @@
 .social-callout h2{font:500 25px 'Outfit','DM Sans',sans-serif;margin:0 0 8px}
 .social-callout p{font-size:16px;line-height:1.8;color:#d2deea;margin:0}
 .social-callout .btn{white-space:nowrap}
+.school-header>.wrap,.school-topbar>.wrap{max-width:1700px}
+.public-nav{width:100%;align-items:center}
+.public-brand{flex:0 0 auto}
+.public-nav .nav-links{flex:1;min-width:0;justify-content:center;align-items:center;gap:22px}
+.public-nav .nav-links a{white-space:nowrap;line-height:1.2;text-align:center}
+.public-nav .nav-actions{flex:0 0 auto;white-space:nowrap}
 @media(max-width:950px){.essential-grid{grid-template-columns:1fr 1fr}.admissions-layout{grid-template-columns:1fr}.admissions-steps{grid-template-columns:repeat(2,1fr)}.news-grid{grid-template-columns:1fr 1fr}.news-grid .news-card:first-child{grid-column:1/-1}.news-list{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.essential-section{padding:50px 0}.essential-grid,.news-grid,.news-list{grid-template-columns:1fr}.news-grid .news-card:first-child{grid-column:auto}.essential-card,.news-card,.admissions-panel{padding:24px}.essential-card h2,.essential-card h3,.news-card h2,.news-card h3{font-size:23px}.essential-intro h2{font-size:31px}.essential-intro p{font-size:16px}.admissions-steps{grid-template-columns:1fr;gap:21px}.social-callout{display:block;padding:25px}.social-callout .btn{margin-top:20px;width:100%}}
