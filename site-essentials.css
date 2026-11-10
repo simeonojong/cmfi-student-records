@@ -59,6 +59,7 @@
 .nav-more>div{position:absolute;right:0;top:calc(100% + 12px);z-index:25;min-width:175px;padding:7px;background:#fff;border:1px solid #e3e8ed;border-radius:7px;box-shadow:0 15px 35px #1734511a}
 .nav-more>div a{display:block!important;padding:10px 12px;color:#52657a;text-align:left!important;border-radius:4px}
 .nav-more>div a:hover{background:#f4f7f9;color:#926344}
+@media(min-width:1281px){.public-nav .nav-links>a[href="learning-hub.html"],.public-nav .nav-links>a[href="graduates.html"]{display:none}}
 @media(max-width:950px){.essential-grid{grid-template-columns:1fr 1fr}.admissions-layout{grid-template-columns:1fr}.admissions-steps{grid-template-columns:repeat(2,1fr)}.news-grid{grid-template-columns:1fr 1fr}.news-grid .news-card:first-child{grid-column:1/-1}.news-list{grid-template-columns:1fr 1fr}}
 @media(max-width:1280px){.nav-more{display:none}}
 @media(max-width:700px){.essential-section{padding:50px 0}.essential-grid,.news-grid,.news-list{grid-template-columns:1fr}.news-grid .news-card:first-child{grid-column:auto}.essential-card,.news-card,.admissions-panel{padding:24px}.essential-card h2,.essential-card h3,.news-card h2,.news-card h3{font-size:23px}.essential-intro h2{font-size:31px}.essential-intro p{font-size:16px}.admissions-steps{grid-template-columns:1fr;gap:21px}.social-callout{display:block;padding:25px}.social-callout .btn{margin-top:20px;width:100%}}
