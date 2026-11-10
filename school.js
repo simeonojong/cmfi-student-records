@@ -7,6 +7,17 @@ for(const nav of document.querySelectorAll('.nav-links,.mobile-school-links')){
  }
  for(const href of orderedNav){const link=nav.querySelector(`a[href="${href}"]`);if(link)nav.appendChild(link)}
 }
+for(const nav of document.querySelectorAll('.nav-links')){
+ const extraLinks=['learning-hub.html','graduates.html'].map(href=>nav.querySelector(`a[href="${href}"]`)).filter(Boolean);
+ if(extraLinks.length&&!nav.querySelector('.nav-more')){
+  const more=document.createElement('details');more.className='nav-more';
+  const summary=document.createElement('summary');summary.textContent='More';
+  const panel=document.createElement('div');
+  extraLinks.forEach(link=>panel.appendChild(link));
+  more.append(summary,panel);nav.appendChild(more);
+  if(extraLinks.some(link=>link.classList.contains('is-current')||link.getAttribute('aria-current')==='page')){more.open=true;summary.setAttribute('aria-current','page')}
+ }
+}
 for(const bar of document.querySelectorAll('.topbar-inner')){
  if(!bar.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow CMFI on Facebook ↗';bar.appendChild(link)}
 }
@@ -41,6 +52,10 @@ for(const link of document.querySelectorAll('.nav-links a,.mobile-school-links a
  const target=new URL(link.href,location.href).pathname.replace(/index\.html$/,'').replace(/\/$/,'');
  const current=location.pathname.replace(/index\.html$/,'').replace(/\/$/,'');
  if(target===current){link.setAttribute('aria-current','page');link.classList.add('is-current');}
+}
+for(const more of document.querySelectorAll('.nav-more')){
+ const active=more.querySelector('a[aria-current="page"]');
+ if(active){more.open=true;more.querySelector('summary')?.setAttribute('aria-current','page')}
 }
 addEventListener('hashchange',handlePageLink);
 handlePageLink();
