@@ -1,6 +1,6 @@
-const routes={'our-school':'about.html',admissions:'admissions.html',academics:'academics.html','student-life':'student-life.html',news:'news.html','learning-hub':'learning-hub.html',graduates:'graduates.html',verification:'verify.html'};
-const orderedNav=['./','about.html','admissions.html','academics.html','student-life.html','news.html','learning-hub.html','graduates.html','verify.html','contact.html'];
-const addedNavLabels={'admissions.html':'Admissions','news.html':'News & events','graduates.html':'Graduates'};
+const routes={'our-school':'about.html',admissions:'admissions.html',academics:'academics.html','student-life':'student-life.html','learning-hub':'learning-hub.html',graduates:'graduates.html',verification:'verify.html'};
+const orderedNav=['./','about.html','admissions.html','academics.html','student-life.html','learning-hub.html','graduates.html','verify.html','contact.html'];
+const addedNavLabels={'admissions.html':'Admissions','graduates.html':'Graduates'};
 for(const nav of document.querySelectorAll('.nav-links,.mobile-school-links')){
  for(const [href,label] of Object.entries(addedNavLabels)){
   if(!nav.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;nav.appendChild(link)}
@@ -25,7 +25,7 @@ for(const footer of document.querySelectorAll('.school-footer-grid>div:last-chil
  if(!footer.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow us on Facebook ↗';footer.appendChild(link)}
 }
 for(const explore of document.querySelectorAll('.school-footer-grid>div:nth-child(2)')){
- for(const [href,label] of [['admissions.html','Admissions'],['news.html','News & events'],['graduates.html','Graduates']]){
+ for(const [href,label] of [['admissions.html','Admissions'],['graduates.html','Graduates']]){
   if(!explore.querySelector(`a[href="${href}"]`)){const link=document.createElement('a');link.href=href;link.textContent=label;explore.appendChild(link)}
  }
 }
@@ -34,7 +34,7 @@ function injectHomeEssentials(){
  const main=document.querySelector('main');
  if(!main||!main.querySelector('.school-hero')||main.querySelector('.essential-home-section'))return;
  const cta=main.querySelector('.standalone-cta');
- const html=`<section class="essential-section essential-home-section"><div class="wrap"><div class="essential-intro"><div class="eyebrow">ESSENTIAL SCHOOL INFORMATION</div><h2>Everything families need,<br><em>in one place.</em></h2><p>Learn how to join CMFI, follow school announcements, and find the services that keep students and families connected.</p></div><div class="essential-grid"><article class="essential-card featured"><div class="eyebrow">FOR NEW FAMILIES</div><h3>Admissions & enrolment</h3><p>Understand the enquiry process, prepare your documents and contact the school office for current dates and requirements.</p><a href="admissions.html">Explore admissions ↗</a></article><article class="essential-card"><div class="eyebrow">STAY CONNECTED</div><h3>News & events</h3><p>Find the latest school announcements, learning highlights, community moments and links to the official Facebook page.</p><a href="news.html">Read school news ↗</a></article><article class="essential-card"><div class="eyebrow">PUBLIC SERVICE</div><h3>Verify a document</h3><p>Scan a QR code or enter a document ID to open the official CMFI student record and verification status.</p><a href="verify.html">Open verification ↗</a></article></div></div></section>`;
+ const html=`<section class="essential-section essential-home-section"><div class="wrap"><div class="essential-intro"><div class="eyebrow">ESSENTIAL SCHOOL INFORMATION</div><h2>Everything families need,<br><em>in one place.</em></h2><p>Learn how to join CMFI, build strong study habits and use the school’s public services.</p></div><div class="essential-grid"><article class="essential-card featured"><div class="eyebrow">FOR NEW FAMILIES</div><h3>Admissions & enrolment</h3><p>Understand the enquiry process, prepare your documents and contact the school office for current dates and requirements.</p><a href="admissions.html">Explore admissions ↗</a></article><article class="essential-card"><div class="eyebrow">LEARNING SUPPORT</div><h3>Build better study habits.</h3><p>Open practical guides for planning, reading, writing, maths and assessment preparation.</p><a href="learning-hub.html">Open the learning hub ↗</a></article><article class="essential-card"><div class="eyebrow">PUBLIC SERVICE</div><h3>Verify a document</h3><p>Scan a QR code or enter a document ID to open the official CMFI student record and verification status.</p><a href="verify.html">Open verification ↗</a></article></div></div></section>`;
  if(cta)cta.insertAdjacentHTML('beforebegin',html);else main.insertAdjacentHTML('beforeend',html);
 }
 injectHomeEssentials();
