@@ -20,6 +20,8 @@ for(const nav of document.querySelectorAll('.nav-links')){
 }
 for(const bar of document.querySelectorAll('.topbar-inner')){
  if(!bar.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow CMFI on Facebook ↗';bar.appendChild(link)}
+ if(!bar.querySelector('[data-school-whatsapp]')){const link=document.createElement('a');link.href='https://wa.me/231880755412';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolWhatsapp='true';link.textContent='WhatsApp +231 88 075 5412';bar.appendChild(link)}
+ if(!bar.querySelector('[data-school-direct-call]')){const link=document.createElement('a');link.href='tel:+231777755413';link.dataset.schoolDirectCall='true';link.textContent='Call 0777 755 413';bar.appendChild(link)}
 }
 for(const footer of document.querySelectorAll('.school-footer-grid>div:last-child')){
  if(!footer.querySelector('a[href*="facebook.com"]')){const link=document.createElement('a');link.href='https://www.facebook.com/cmfibilingualhighschool';link.target='_blank';link.rel='noopener noreferrer';link.dataset.schoolFacebook='true';link.textContent='Follow us on Facebook ↗';footer.appendChild(link)}
